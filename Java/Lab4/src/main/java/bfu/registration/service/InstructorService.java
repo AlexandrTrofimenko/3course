@@ -21,6 +21,10 @@ public class InstructorService implements CourseInstructorService{
         this.banchelorStudents = reader.readBachelorStudentData();
         StudentDataReader reader1 = new StudentDataReader();
         this.courseInfos = reader1.readCourseInfosData();
+        StudentDataReader reader2 = new StudentDataReader();
+        this.courseInstances = reader2.readCourseInstancesData();
+        StudentDataReader reader3 = new StudentDataReader();
+        this.instructors = reader3.readInstructorsData();
     }
     @Override
     public Student[] findStudentsByCourseId(long courseId) throws IOException {
@@ -29,7 +33,7 @@ public class InstructorService implements CourseInstructorService{
         students = banchelorStudents;
         for(int i = 0; i < students.length;i++)
         {
-            if(banchelorStudents[i].getCompletedCourses() == courseId) {
+            if(banchelorStudents[i].getCompletedCourses()[i] == courseId ) {
                 students[i].setId(banchelorStudents[i].getId());
                 students[i].setName(banchelorStudents[i].getName());
             }
