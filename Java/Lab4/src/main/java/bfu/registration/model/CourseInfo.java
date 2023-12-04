@@ -31,7 +31,7 @@ public class CourseInfo {
         this.description = description;
     }
 
-    long[] getPrerequisites() {
+    public long[] getPrerequisites() {
         return this.prerequisites;
     }
 

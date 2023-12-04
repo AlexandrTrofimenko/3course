@@ -11,8 +11,8 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         System.out.println("Hello world!");
-        InstructorService service = new InstructorService();
 
-        System.out.println(Arrays.toString(service.findStudentsByCourseId(10124)));
+        subunsubservice se1 = new subunsubservice();
+        System.out.println(se1.subscribe(2021,100003));
     }
 }

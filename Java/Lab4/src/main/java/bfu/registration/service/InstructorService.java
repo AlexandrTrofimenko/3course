@@ -19,25 +19,22 @@ public class InstructorService implements CourseInstructorService{
     {
         StudentDataReader reader = new StudentDataReader();
         this.banchelorStudents = reader.readBachelorStudentData();
-        StudentDataReader reader1 = new StudentDataReader();
-        this.courseInfos = reader1.readCourseInfosData();
-        StudentDataReader reader2 = new StudentDataReader();
-        this.courseInstances = reader2.readCourseInstancesData();
-        StudentDataReader reader3 = new StudentDataReader();
-        this.instructors = reader3.readInstructorsData();
+   //     this.courseInfos = reader.readCourseInfosData();
+        //       this.courseInstances = reader.readCourseInstancesData();
+    //    this.instructors = reader.readInstructorsData();
     }
     @Override
     public Student[] findStudentsByCourseId(long courseId) throws IOException {
         Student[] students = new Student[banchelorStudents.length];
         System.out.println(students.length);
-        students = banchelorStudents;
-        for(int i = 0; i < students.length;i++)
-        {
-            if(banchelorStudents[i].getCompletedCourses()[i] == courseId ) {
-                students[i].setId(banchelorStudents[i].getId());
-                students[i].setName(banchelorStudents[i].getName());
+        int count = 0;
+        for( int i = 0 ; i < banchelorStudents.length;i++)
+            for(int j = 0 ; j < banchelorStudents[i].getCompletedCourses().length;j++) {
+                if (courseId == banchelorStudents[i].getCompletedCourses()[j]){
+                    students[count] = banchelorStudents[i];
+                    count++;
+                }
             }
-        }
         return students;
     }
 

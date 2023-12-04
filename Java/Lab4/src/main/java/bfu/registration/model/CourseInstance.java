@@ -6,13 +6,31 @@ import java.time.LocalDate;
  * Класс с данными о проведении курса. Один курс (например, дискретная математика) может быть проведен несколько раз.
  */
 public class CourseInstance {
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
     private long id;
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     private long courseId;
     private long instructorId;
     private LocalDate startDate;
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
     private int capacity;
 
-    long getId() {
+    public long getId() {
         return this.id;
     }
 
@@ -36,11 +54,12 @@ public class CourseInstance {
         this.instructorId = instructorId;
     }
 
-    LocalDate getStartDate() {
+    public LocalDate getStartDate() {
         return this.startDate;
     }
 
     void setLocalDate(LocalDate startDate) {
         this.startDate = startDate;
     }
+
 }
