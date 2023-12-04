@@ -30,7 +30,7 @@ public class Problem3 {
         {
             for(int j = 0; j < matrix[i].length;j++)
             {
-                matrix1[i*matrix.length+j]=matrix[i][j];
+                matrix1[j*matrix.length+i]=matrix[i][j];
             }
         }
         for(int elemnt:matrix1)
